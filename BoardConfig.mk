@@ -192,3 +192,4 @@ TW_BATTERY_SYSFS_WAIT_SECONDS := 6
 TW_BACKUP_EXCLUSIONS := /data/fonts
 TW_HAS_MTP := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone5/temp"
+TW_SUPPORT_INPUT_AIDL_HAPTICS := true
