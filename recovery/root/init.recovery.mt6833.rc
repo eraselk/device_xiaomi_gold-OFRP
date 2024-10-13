@@ -62,6 +62,12 @@ service vendor.gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-ser
     disabled
     seclabel u:r:recovery:s0
 
+service vendor.vibrator-default /vendor/bin/hw/android.hardware.vibrator-service.mediatek
+    class hal
+    user root
+    group root system
+    seclabel u:r:recovery:s0
+
 # Actions
 on property:crypto.ready=1
     start vendor.keymint-mitee
