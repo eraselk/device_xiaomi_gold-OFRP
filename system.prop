@@ -14,7 +14,6 @@ ro.crypto.support_metadata_encrypt=true
 # TEE
 ro.vendor.mtk_tee_gp_support=1
 ro.vendor.mtk_mitee_support=1
-ro.hardware.gatekeeper=mitee
 
 # Misc
 ro.vendor.mediatek.platform=MT6833
