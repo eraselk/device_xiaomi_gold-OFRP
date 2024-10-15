@@ -134,7 +134,7 @@ PRODUCT_PACKAGES += \
 
 # Otacert
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(DEVICE_PATH)/security/miui_releasekey.x509.pem
+    $(DEVICE_PATH)/security/miui_releasekey
 
 # Hidl Service
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
