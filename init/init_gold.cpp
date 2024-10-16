@@ -32,6 +32,4 @@ void vendor_load_properties()
         property_override(string("ro.product.") + prop + string("marketname"), "Redmi Note 13 5G");
         property_override(string("ro.product.") + prop + string("cert"), "2312DRAABC");
     }
-    property_override("ro.bootimage.build.date.utc", "1705914924");
-    property_override("ro.build.date.utc", "1705914924");
 }
