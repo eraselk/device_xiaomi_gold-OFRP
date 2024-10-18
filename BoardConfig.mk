@@ -33,10 +33,6 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
 TARGET_USES_64_BIT_BINDER := true
 
-# Power
-ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
-
 # Assertation
 TARGET_OTA_ASSERT_DEVICE := gold
 
@@ -164,7 +160,6 @@ TARGET_INIT_VENDOR_LIB := libinit_gold
 TARGET_RECOVERY_DEVICE_MODULES := libinit_gold
 
 # TWRP Configurations
-TW_FRAMERATE := 60
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 1000
