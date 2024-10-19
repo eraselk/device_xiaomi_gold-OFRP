@@ -1,13 +1,13 @@
 export TARGET_ARCH="arm64-v8a"
 
 # Some about us
-export FOX_VERSION="R12.1_A13"
+export FOX_VERSION="R12.1_A14"
 export OF_MAINTAINER="eraselk"
 
 # Build environment stuffs
 export FOX_BUILD_DEVICE="gold"
 export TARGET_DEVICE_ALT="iron"
-export FOX_VARIANT="MIUI"
+export FOX_VARIANT="HyperOS"
 export FOX_BUILD_TYPE="Unofficial"
 export TW_DEFAULT_LANGUAGE="en"
 export ALLOW_MISSING_DEPENDENCIES=true
@@ -79,6 +79,6 @@ export OF_ENABLE_LPTOOLS=1
 export FOX_ASH_IS_BASH=1
 export FOX_REPLACE_TOOLBOX_GETPROP=1
 export FOX_USE_BASH_SHELL=1
-export OF_USE_LZ4_COMPRESSION=1 
+export OF_USE_LZ4_COMPRESSION=1
 export FOX_USE_NANO_EDITOR=1
 export FOX_INSTALLER_DISABLE_AUTOREBOOT=1
