@@ -57,7 +57,7 @@ AB_OTA_PARTITIONS += \
     vendor_boot \
     vendor_dlkm \
     mi_ext
-    
+
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
