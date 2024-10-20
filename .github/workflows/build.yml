@@ -13,10 +13,6 @@ on:
         description: 'OrangeFox Manifest Branch'
         required: true
         default: '12.1'
-        type: choice
-        options:
-        - '12.1'
-        - '11.0'
       DEVICE_TREE:
         description: 'OrangeFox Device Tree'
         required: true
@@ -24,11 +20,7 @@ on:
       DEVICE_TREE_BRANCH:
         description: 'OrangeFox Device Tree Branch'
         required: true
-        default: 'A13'
-        type: choice
-        options:
-        - 'A13'
-        - 'A14'
+        default: 'fox_12.1'
       DEVICE_PATH:
         description: 'Specify your Device Path'
         required: true
@@ -41,11 +33,6 @@ on:
         description: 'Specify your Build Target'
         required: true
         default: 'vendorboot'
-        type: choice
-        options:
-        - boot
-        - recovery
-        - vendorboot
 
 jobs:
   build:
