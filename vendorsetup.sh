@@ -1,13 +1,13 @@
 export TARGET_ARCH="arm64-v8a"
 
 # Some about us
-export FOX_VERSION="R12.1_A14"
+export FOX_VERSION="R12.1_A13"
 export OF_MAINTAINER="eraselk"
 
 # Build environment stuffs
 export FOX_BUILD_DEVICE="gold"
 export TARGET_DEVICE_ALT="iron"
-export FOX_VARIANT="HyperOS"
+export FOX_VARIANT="MIUI"
 export FOX_BUILD_TYPE="Unofficial"
 export TW_DEFAULT_LANGUAGE="en"
 export ALLOW_MISSING_DEPENDENCIES=true
