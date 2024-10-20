@@ -7,7 +7,7 @@ export OF_MAINTAINER="eraselk"
 # Build environment stuffs
 export FOX_BUILD_DEVICE="gold"
 export TARGET_DEVICE_ALT="iron"
-export FOX_VARIANT="A13/A14 (Unified)"
+export FOX_VARIANT="Unified"
 export FOX_BUILD_TYPE="Unofficial"
 export TW_DEFAULT_LANGUAGE="en"
 export ALLOW_MISSING_DEPENDENCIES=true
