@@ -1,7 +1,7 @@
 ## OrangeFox Recovery Device Tree for Redmi Note 13 5G (gold/iron)
 ### What's working?
 - [X] Flashing
-- [X] Partially Decryption (A13)
+- [X] Partially Decryption (A14)
 - [X] MTP, ADB, and Sideload
 - [ ] Vibrator
 - [X] Touch
