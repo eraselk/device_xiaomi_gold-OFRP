@@ -37,7 +37,7 @@ on:
         description: 'Specify your Build Target'
         required: true
         default: 'vendorboot'
-      TIMEZONE
+      TIMEZONE:
         description: 'Specify your TimeZone'
         required: true
         default: 'Asia/Makassar'
