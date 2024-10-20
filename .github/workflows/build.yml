@@ -1,4 +1,4 @@
-name: OFRP ${{ inputs.DEVICE_TREE_BRANCH }} Build
+name: OFRP Build
 
 # Credits to:
 # https://github.com/TeamWin
