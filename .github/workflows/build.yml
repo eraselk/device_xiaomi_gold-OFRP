@@ -1,4 +1,4 @@
-name: OrangeFox - Build
+name: OFRP ${{ inputs.DEVICE_TREE_BRANCH }} Build
 
 # Credits to:
 # https://github.com/TeamWin
@@ -37,6 +37,10 @@ on:
         description: 'Specify your Build Target'
         required: true
         default: 'vendorboot'
+      TIMEZONE
+        description: 'Specify your TimeZone'
+        required: true
+        default: 'Asia/Makassar'
 
 jobs:
   build:
@@ -58,6 +62,12 @@ jobs:
       with:
         swap-size-gb: 24
       
+    - name: Set Timezone
+      run: |
+        echo "${{ inputs.TIMEZONE }}" | grep -q ' ' && { echo "Invalid timezone ${{ inputs.TIMEZONE }}"; exit 1; }
+        echo "${{ inputs.TIMEZONE }}" | grep -q '/' || { echo "Invalid timezone ${{ inputs.TIMEZONE }}"; exit 1; }
+        sudo ln -sf /usr/share/zoneinfo/${{ inputs.TIMEZONE }} /etc/localtime
+
     - name: Build Environment
       run: |
         sudo apt install aria2 -y
@@ -94,7 +104,7 @@ jobs:
 
     - name: Set Release Properties
       run: |
-        echo "BUILD_DATE=$(TZ=Asia/Makassar date +%Y%m%d)" >> $GITHUB_ENV
+        echo "BUILD_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
         cd ${GITHUB_WORKSPACE}/OrangeFox/fox_${{ inputs.MANIFEST_BRANCH }}
 
     - name: Upload to Release
@@ -103,10 +113,10 @@ jobs:
         files: |
           OrangeFox/fox_${{ inputs.MANIFEST_BRANCH }}/out/target/product/${{ inputs.DEVICE_NAME }}/OrangeFox*.img
           OrangeFox/fox_${{ inputs.MANIFEST_BRANCH }}/out/target/product/${{ inputs.DEVICE_NAME }}/OrangeFox*.zip
-        name: OrangeFox Recovery for ${{ inputs.DEVICE_NAME }} // ${{ env.BUILD_DATE }}
+        name: OFRP for ${{ inputs.DEVICE_NAME }} ${{ inputs.DEVICE_TREE_BRANCH }} // ${{ env.BUILD_DATE }} 
         tag_name: ${{ github.run_id }}
         body: |
           ## OrangeFox Recovery Build - Unofficial
-          Build: fox_${{ inputs.MANIFEST_BRANCH }}
-          Device: [Device Tree/Branch](${{ inputs.DEVICE_TREE }}/tree/${{ inputs.DEVICE_TREE_BRANCH }})
-          Commit: Most recent [commit](${{ inputs.DEVICE_TREE }}/commit/${{ env.COMMIT_ID }}) during building.
+          Android Version: ${{ inputs.DEVICE_TREE_BRANCH }}
+          Device: ${{ inputs.DEVICE_NAME }}
+          Last commit: [here](${{ inputs.DEVICE_TREE }}/commit/${{ env.COMMIT_ID }})
