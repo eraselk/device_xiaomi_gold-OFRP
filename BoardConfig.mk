@@ -117,7 +117,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Recovery
 TARGET_NO_RECOVERY := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
 # Treble
 BOARD_VNDK_VERSION := current
@@ -128,7 +128,7 @@ BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT :=
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_LOAD_VENDOR_MODULES := "ft3683g.ko"
+TW_LOAD_VENDOR_MODULES := ft3683g.ko
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -139,8 +139,8 @@ TARGET_INIT_VENDOR_LIB := libinit_gold
 TARGET_RECOVERY_DEVICE_MODULES := libinit_gold
 
 # TWRP Configurations
-TW_THEME := "portrait_hdpi"
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_THEME := portrait_hdpi
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_DEFAULT_BRIGHTNESS := 1000
 TW_MAX_BRIGHTNESS := 4000
 TW_INCLUDE_FASTBOOTD := true
@@ -159,10 +159,10 @@ TW_EXCLUDE_TWRPAPP := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 TW_USE_TOOLBOX := true
 TARGET_USES_MKE2FS := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TW_DEFAULT_LANGUAGE := en
-TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_INPUT_BLACKLIST := hbtp_vm
 TW_BATTERY_SYSFS_WAIT_SECONDS := 6
 TW_HAS_MTP := true
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone5/temp"
+TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone5/temp
 TW_NO_FASTBOOT_BOOT := true
