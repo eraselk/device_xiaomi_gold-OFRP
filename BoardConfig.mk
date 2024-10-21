@@ -1,19 +1,3 @@
-#
-# Copyright (C) 2022 The TWRP Open Source Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
 DEVICE_PATH := device/xiaomi/gold
 
 # Architecture
@@ -63,8 +47,8 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb
 
 # Kernel and DTB Configuration
-TARGET_KERNEL_ARCH := arm64
 BOARD_RAMDISK_USE_LZ4 := true
+TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_NO_KERNEL := true
 
@@ -75,7 +59,7 @@ BOARD_RAMDISK_OFFSET := 0x11088000
 BOARD_TAGS_OFFSET := 0x07c08000
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_DTB_SIZE := 190609
-BOARD_DTB_OFFSET := 0x01f00000
+BOARD_DTB_OFFSET := 0x07c08000
 BOARD_HEADER_SIZE := 2128
 BOARD_VENDOR_CMDLINE := bootopt=64S3,32N2,64N2
 
@@ -133,7 +117,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Recovery
 TARGET_NO_RECOVERY := true
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Treble
 BOARD_VNDK_VERSION := current
@@ -142,25 +126,20 @@ BOARD_VNDK_VERSION := current
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT :=
-BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE :=
+BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_LOAD_VENDOR_MODULES := "ft3683g.ko gt9916r.ko"
+TW_LOAD_VENDOR_MODULES := "ft3683g.ko"
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
-BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
-BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # init
 TARGET_INIT_VENDOR_LIB := libinit_gold
 TARGET_RECOVERY_DEVICE_MODULES := libinit_gold
 
 # TWRP Configurations
-TW_THEME := portrait_hdpi
+TW_THEME := "portrait_hdpi"
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 1000
 TW_MAX_BRIGHTNESS := 4000
@@ -180,10 +159,10 @@ TW_EXCLUDE_TWRPAPP := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 TW_USE_TOOLBOX := true
 TARGET_USES_MKE2FS := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file"
 TW_DEFAULT_LANGUAGE := en
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_BATTERY_SYSFS_WAIT_SECONDS := 6
-TW_BACKUP_EXCLUSIONS := /data/fonts
 TW_HAS_MTP := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone5/temp"
+TW_NO_FASTBOOT_BOOT := true
