@@ -80,13 +80,11 @@ AB_OTA_POSTINSTALL_CONFIG += \
 TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.keymaster@4.1 \
     android.hardware.graphics.common@1.0 \
-    libion \
     libxml2
 
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.graphics.common@1.0 \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
 
 # Bootctrl
@@ -130,7 +128,7 @@ PRODUCT_PACKAGES += \
 
 # Otacert
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(DEVICE_PATH)/security/miui_releasekey
+    $(DEVICE_PATH)/security/releasekey
 
 # Hidl Service
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
