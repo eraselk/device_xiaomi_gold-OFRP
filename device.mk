@@ -57,7 +57,7 @@ AB_OTA_PARTITIONS += \
     vendor_boot \
     vendor_dlkm \
     mi_ext
-    
+
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
@@ -80,13 +80,11 @@ AB_OTA_POSTINSTALL_CONFIG += \
 TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.keymaster@4.1 \
     android.hardware.graphics.common@1.0 \
-    libion \
     libxml2
 
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.graphics.common@1.0 \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
 
 # Bootctrl
