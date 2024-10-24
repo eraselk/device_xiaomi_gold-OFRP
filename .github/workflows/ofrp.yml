@@ -16,7 +16,7 @@ on:
       DEVICE_TREE:
         description: 'OrangeFox Device Tree'
         required: true
-        default: 'https://github.com/eraselk/device_xiaomi_gold-OFRP'
+        default: 'https://github.com/eraselk/device_xiaomi_gold_recovery'
       DEVICE_TREE_BRANCH:
         description: 'OrangeFox Device Tree Branch'
         required: true
