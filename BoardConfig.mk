@@ -15,8 +15,6 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
-TARGET_USES_64_BIT_BINDER := true
-
 # Assertation
 TARGET_OTA_ASSERT_DEVICE := gold
 
@@ -132,7 +130,6 @@ TW_LOAD_VENDOR_MODULES := ft3683g.ko
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 
 # init
 TARGET_INIT_VENDOR_LIB := libinit_gold
@@ -143,7 +140,6 @@ TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_DEFAULT_BRIGHTNESS := 1000
 TW_MAX_BRIGHTNESS := 4000
-TW_INCLUDE_FASTBOOTD := true
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
 TW_INCLUDE_RESETPROP := true
@@ -159,7 +155,6 @@ TW_EXCLUDE_TWRPAPP := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 TW_USE_TOOLBOX := true
 TARGET_USES_MKE2FS := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TW_DEFAULT_LANGUAGE := en
 TW_INPUT_BLACKLIST := hbtp_vm
 TW_BATTERY_SYSFS_WAIT_SECONDS := 6
