@@ -73,6 +73,7 @@ jobs:
       run: |
         mkdir workspace
         cd workspace
+        echo "workspace-folder=$(pwd)" >> $GITHUB_OUTPUT
         git config --global user.name "${{ github.actor }}"
         git config --global user.email "${{ github.actor_id }}"
         repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
@@ -81,11 +82,13 @@ jobs:
     - name: Repo Sync
       run: |
         repo sync -j$(nproc --all) --force-sync
+      working-directory: workspace
       
     - name: Clone device tree
       run: |
         git clone --depth=1 ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
-        
+      working-directory: ${{ steps.pwd.outputs.workspace-folder }}
+      
     - name: Set Swap Space
       uses: pierotofy/set-swap-space@master
       with:
@@ -95,7 +98,8 @@ jobs:
       run: |
         source build/envsetup.sh
         lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
-        
+      working-directory: ${{ steps.pwd.outputs.workspace-folder }}
+      
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:
